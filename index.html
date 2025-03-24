@@ -6,8 +6,36 @@
     <title>Document</title>
 </head>
 <body>
-    <button>
-        <input type="text">
-    </button>
+
+<input type="text" id="input"> 
+<button  type="button" onclick="display()">Submit</button>
+<button type="button" onclick="reset()">Reset</button>
+
+<script type="text/javascript">
+
+   let ul = document.createElement("ul");
+
+function display(){
+    let data = document.getElementById("input").value; 
+    if(data === ""){ 
+        alert("Fill some name is the input box");
+    }
+    else{
+       console.log(data);
+       let li = document.createElement("li");
+       li.textContent = data;
+       ul.appendChild(li); 
+       document.body.appendChild(ul); 
+       document.getElementById("input").value = "";
+   }
+} 
+
+function reset(){
+    ul.innerHTML = "";  
+} 
+</script>
+
+
+
 </body>
 </html>
